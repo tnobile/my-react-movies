@@ -1,6 +1,6 @@
 {
   "name": "my-react-movies",
-  "homepage": "https://tnobile.github.io/my-react-movies",
+  "homepage": "http://tnobile.github.io/my-react-movies",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
