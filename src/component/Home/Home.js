@@ -29,12 +29,12 @@ const Home = () => {
     const delayedQuery = useRef(debounce(q => setKeyQuery(q), 1000), [keyWord]).current;
     return (
         <>
-            <input type='text' value={keyWord} onChange={handleChange}>
+            <input className={styles.search} type='text' value={keyWord} onChange={handleChange}>
             </input>
             <table>
                 <tbody>
                     {movies && movies.length > 0 && movies.map(m =>
-                        <tr>
+                        <tr key={m.show.id}>
                             <td><img src={m.show.image && m.show.image.medium} alt={m.show.name}></img></td>
                             <td>{m.show.name}</td>
                             <td>{m.show.language}</td>
