@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/tnobile/my-react-moviesme/static/css/main.8082c2a9.chunk.css",
-    "main.js": "/tnobile/my-react-moviesme/static/js/main.cd8cab03.chunk.js",
-    "main.js.map": "/tnobile/my-react-moviesme/static/js/main.cd8cab03.chunk.js.map",
-    "runtime-main.js": "/tnobile/my-react-moviesme/static/js/runtime-main.053fea84.js",
-    "runtime-main.js.map": "/tnobile/my-react-moviesme/static/js/runtime-main.053fea84.js.map",
-    "static/js/2.d4da4d9b.chunk.js": "/tnobile/my-react-moviesme/static/js/2.d4da4d9b.chunk.js",
-    "static/js/2.d4da4d9b.chunk.js.map": "/tnobile/my-react-moviesme/static/js/2.d4da4d9b.chunk.js.map",
-    "static/js/3.d6423950.chunk.js": "/tnobile/my-react-moviesme/static/js/3.d6423950.chunk.js",
-    "static/js/3.d6423950.chunk.js.map": "/tnobile/my-react-moviesme/static/js/3.d6423950.chunk.js.map",
-    "index.html": "/tnobile/my-react-moviesme/index.html",
-    "static/css/main.8082c2a9.chunk.css.map": "/tnobile/my-react-moviesme/static/css/main.8082c2a9.chunk.css.map",
-    "static/js/2.d4da4d9b.chunk.js.LICENSE.txt": "/tnobile/my-react-moviesme/static/js/2.d4da4d9b.chunk.js.LICENSE.txt"
+    "main.css": "/tnobile/my-react-movies/static/css/main.8082c2a9.chunk.css",
+    "main.js": "/tnobile/my-react-movies/static/js/main.cd8cab03.chunk.js",
+    "main.js.map": "/tnobile/my-react-movies/static/js/main.cd8cab03.chunk.js.map",
+    "runtime-main.js": "/tnobile/my-react-movies/static/js/runtime-main.0bb6fae1.js",
+    "runtime-main.js.map": "/tnobile/my-react-movies/static/js/runtime-main.0bb6fae1.js.map",
+    "static/js/2.d4da4d9b.chunk.js": "/tnobile/my-react-movies/static/js/2.d4da4d9b.chunk.js",
+    "static/js/2.d4da4d9b.chunk.js.map": "/tnobile/my-react-movies/static/js/2.d4da4d9b.chunk.js.map",
+    "static/js/3.d6423950.chunk.js": "/tnobile/my-react-movies/static/js/3.d6423950.chunk.js",
+    "static/js/3.d6423950.chunk.js.map": "/tnobile/my-react-movies/static/js/3.d6423950.chunk.js.map",
+    "index.html": "/tnobile/my-react-movies/index.html",
+    "static/css/main.8082c2a9.chunk.css.map": "/tnobile/my-react-movies/static/css/main.8082c2a9.chunk.css.map",
+    "static/js/2.d4da4d9b.chunk.js.LICENSE.txt": "/tnobile/my-react-movies/static/js/2.d4da4d9b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.053fea84.js",
+    "static/js/runtime-main.0bb6fae1.js",
     "static/js/2.d4da4d9b.chunk.js",
     "static/css/main.8082c2a9.chunk.css",
     "static/js/main.cd8cab03.chunk.js"
