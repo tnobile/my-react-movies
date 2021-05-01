@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { getMovies } from '../../service/MovieService'
+import { getMovies, getMoviesByPerson } from '../../service/MovieService'
+import MovieList from '../MovieList/MovieList'
+import Heading from '../Heading/Heading'
 import styles from './Home.module.css'
 
 function debounce(func, delay) {
@@ -13,6 +15,8 @@ const Home = () => {
     const [movies, setMovies] = useState([]);
     const [keyWord, setKeyWord] = useState("Japan");
     const [keyQuery, setKeyQuery] = useState("Japan");
+    const [keyPerson, setKeyPerson] = useState("");
+    const [keyPersonQuery, setKeyPersonQuery] = useState("");
 
     useEffect(() => {
         (async () => {
@@ -22,41 +26,34 @@ const Home = () => {
             setMovies(data);
         })();
     }, [keyQuery]);
-    const handleChange = (e) => {
-        setKeyWord(e.target.value)
+
+    useEffect(() => {
+        (async () => {
+            if (!keyPersonQuery) return;
+            const data = await getMoviesByPerson(keyPersonQuery);
+            console.log(`${keyPersonQuery} got: `, data);
+            setMovies(data);
+        })();
+    }, [keyPersonQuery]);
+    const handleChange = e => {
+        setKeyWord(e.target.value);
         delayedQuery(e.target.value);
     }
+
+    const handlePersonChange= e=>{
+        setKeyPerson(e.target.value);
+        delayedPersonQuery(e.target.value);
+    }
     const delayedQuery = useRef(debounce(q => setKeyQuery(q), 1000), [keyWord]).current;
+    const delayedPersonQuery = useRef(debounce(q => setKeyPersonQuery(q), 1000), [keyWord]).current;
     return (
         <>
-            <input className={styles.search} type='text' value={keyWord} onChange={handleChange}>
-            </input>
-            <table>
-                <tbody>
-                    {movies && movies.length > 0 && movies.map(m =>
-                        <tr key={m.show.id}>
-                            <td><img src={m.show.image && m.show.image.medium} alt={m.show.name}></img></td>
-                            <td>{m.show.name}</td>
-                            <td>{m.show.language}</td>
-                            <td>{m.show.type}</td>
-                            <td>{m.show.status}</td>
-                            <td>{m.show.genres}</td>
-                            <td>{m.show.externals.imdb}</td>
-                            <td>{m.show.externals.thetvdb}</td>
-                            <td>{m.show.externals.tvrage}</td>
-                            <td>{m.show.id}</td>
-                            <td>{m.show.network && m.show.network.country.name}</td>
-                            <td>{m.show.network && m.show.network.country.code}</td>
-                            <td>{m.show.network && m.show.network.country.countryZone}</td>
-                            <td>{m.show.rating.average}</td>
-                            <td>{m.show.schedule.days}</td>
-                            <td>{m.show.schedule.time}</td>
-                            <td>{m.score}</td>
-                            <td>{m.show.url}</td>
-                            <td>{m.show.officialSite}</td>
-                        </tr>)}
-                </tbody>
-            </table>
+            <div className='container-fluid movie-app'>
+                <Heading keyWord={keyWord} handleChange={handleChange}/>
+                <div className='row'>
+                    {movies && movies.length > 0 && <MovieList movies={movies} />}
+                </div>
+            </div>
         </>
     )
 }
