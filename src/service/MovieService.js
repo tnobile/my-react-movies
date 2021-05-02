@@ -14,7 +14,7 @@ export const getMovies = async (keyword) => {
          'Accept': 'application/json',
          'Content-Type': 'application/json'
        },
-       body: JSON.stringify({"url" : `${url}shows?q=${keyword}`})
+       body: JSON.stringify({"myurl" : `${url}shows?q=${keyword}`})
    });
    const data = await response.json();
    return data.filter(d => d.show.image);
