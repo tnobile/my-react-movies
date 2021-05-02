@@ -30,14 +30,14 @@ const Home = () => {
         })();
     }, [keyQuery]);
 
-    useEffect(() => {
-        (async () => {
-            if (!keyPersonQuery) return;
-            const data = await getMoviesByPerson(keyPersonQuery);
-            console.log(`${keyPersonQuery} got: `, data);
-            setMovies(data);
-        })();
-    }, [keyPersonQuery]);
+    // useEffect(() => {
+    //     (async () => {
+    //         if (!keyPersonQuery) return;
+    //         const data = await getMoviesByPerson(keyPersonQuery);
+    //         console.log(`${keyPersonQuery} got: `, data);
+    //         setMovies(data);
+    //     })();
+    // }, [keyPersonQuery]);
     const handleChange = e => {
         setKeyWord(e.target.value);
         delayedQuery(e.target.value);
