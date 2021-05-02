@@ -4,6 +4,7 @@ import MovieList from '../MovieList/MovieList'
 import Heading from '../Heading/Heading'
 //import styles from './Home.module.css'
 import AddFavourite from '../AddFavourite/AddFavourite'
+import Movie from '../Movie/Movie'
 
 function debounce(func, delay) {
     let timer;
@@ -18,7 +19,7 @@ const Home = () => {
     const [selected, setSelected] = useState();
     const [keyWord, setKeyWord] = useState("Japan");
     const [keyQuery, setKeyQuery] = useState("Japan");
- //   const [keyPerson, setKeyPerson] = useState("");
+    //   const [keyPerson, setKeyPerson] = useState("");
     //const [keyPersonQuery, setKeyPersonQuery] = useState("");
 
     useEffect(() => {
@@ -57,12 +58,13 @@ const Home = () => {
         <>
             <div className='container-fluid movie-app'>
                 <Heading keyWord={keyWord} handleChange={handleChange} />
-                <div className='row'>
+                <div className='row flex-nowrap'>
                     {movies && movies.length > 0 &&
                         <MovieList movies={movies} selected={selected}
                             handleFavouritesClick={addFavouriteMovie}
                             favouriteComponent={AddFavourite} />}
                 </div>
+                {selected && <Movie movie={selected} />}
             </div>
         </>
     )

@@ -2,7 +2,7 @@ const AddFavourite = () => {
     return (
         <>
             <div style={{background:"transparent"}}>
-                <span className='mr-2' style={{ "fontSize": "16px" }}>Add to Favourites</span>
+                <span className='mr-2' style={{ "fontSize": "16px" }}>Show Details</span>
                 <svg
                     width='1em'
                     height='1em'
