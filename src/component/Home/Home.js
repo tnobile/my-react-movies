@@ -28,6 +28,7 @@ const Home = () => {
             const data = await getMovies(keyQuery);
             console.log(`${keyQuery} got: `, data);
             setMovies(data);
+            setSelected(undefined);
         })();
     }, [keyQuery]);
 
