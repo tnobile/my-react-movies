@@ -52,7 +52,7 @@ const Home = () => {
     //     delayedPersonQuery(e.target.value);
     // }
     const delayedQuery = useRef(debounce(q => setKeyQuery(q), 1000), [keyWord]).current;
-    const delayedPersonQuery = useRef(debounce(q => setKeyPersonQuery(q), 1000), [keyWord]).current;
+    //const delayedPersonQuery = useRef(debounce(q => setKeyPersonQuery(q), 1000), [keyWord]).current;
     return (
         <>
             <div className='container-fluid movie-app'>
