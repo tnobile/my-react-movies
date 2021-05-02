@@ -17,8 +17,8 @@ const Home = () => {
     const [favourites, setFavourites] = useState([]);
     const [movies, setMovies] = useState([]);
     const [selected, setSelected] = useState();
-    const [keyWord, setKeyWord] = useState("Japan");
-    const [keyQuery, setKeyQuery] = useState("Japan");
+    const [keyWord, setKeyWord] = useState("Sakura");
+    const [keyQuery, setKeyQuery] = useState("Sakura");
     //   const [keyPerson, setKeyPerson] = useState("");
     //const [keyPersonQuery, setKeyPersonQuery] = useState("");
 

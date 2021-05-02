@@ -1,8 +1,8 @@
 import styles from './Movie.module.css'
 
-const RawHTML = ({children, className = ""}) => 
-<div className={className}
-  dangerouslySetInnerHTML={{ __html: children.replace(/\n/g, '<br />')}} />
+const RawHTML = ({ children, className = "" }) =>
+    <div className={className}
+        dangerouslySetInnerHTML={{ __html: children.replace(/\n/g, '<br />') }} />
 
 const Movie = ({ movie }) => {
     return (
@@ -12,21 +12,22 @@ const Movie = ({ movie }) => {
                     <div className="col-md-2">
                         <img src={movie.show.image && movie.show.image.medium} alt={movie.show.name}></img>
                     </div>
-                    <div className="col-auto col-md-4 justify-content-start">
+                    <div className="col-auto col-md-3 justify-content-start m-1">
                         <div className={styles.title}> {movie.show.name}</div>
-                        <div>
-                            <RawHTML children={movie.show.summary} className={styles.summary}/>
-                            <ul className="list-unstyled">
-                                <li> {movie.show.language}</li>
-                                <li> {movie.show.genres}</li>
-                                <li> {movie.show.type}</li>
-                                <li> {movie.show.status}</li>
-                                <li> {movie.show.score}</li>
-                                <li> <a href={movie.show.url}>{movie.show.url}</a></li>
-                                <li> <a href={movie.show.officialSite}>{movie.show.officialSite}</a></li>
-                            </ul>
-                        </div>
-                    </div></div>
+                        <RawHTML children={movie.show.summary} className={styles.summary} />
+                    </div>
+                    <div className="col-auto col-md-3 justify-content-start">
+                        <ul className="list-unstyled">
+                            <li> {movie.show.language}</li>
+                            <li> {movie.show.genres}</li>
+                            <li> {movie.show.type}</li>
+                            <li> {movie.show.status}</li>
+                            <li> {movie.show.score}</li>
+                            <li> <a href={movie.show.url}>{movie.show.url}</a></li>
+                            <li> <a href={movie.show.officialSite}>{movie.show.officialSite}</a></li>
+                        </ul>
+                    </div>
+                </div>
                 // <tr key={movie.show.id}>
                 //     <td><img src={movie.show.image && movie.show.image.medium} alt={movie.show.name}></img></td>
                 //     <td>{movie.show.name}</td>
@@ -49,7 +50,7 @@ const Movie = ({ movie }) => {
                 //     <td>{movie.show.officialSite}</td>
                 //                </tr>}
             }
-            {!movie && "nothing"}
+            { !movie && "nothing"}
         </>
     )
 }

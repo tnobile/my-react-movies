@@ -1,5 +1,5 @@
 const url = "http://api.tvmaze.com/search/";
-const proxyUrl="https://myproxyfunctions.azurewebsites.net/api/proxyfunctions"
+const proxyUrl = "https://myproxyfunctions.azurewebsites.net/api/proxyfunctions"
 //const proxyUrl="http://localhost:7071/api/ProxyFunctions"
 
 export const getMovies = async (keyword) => {
@@ -13,15 +13,15 @@ export const getMovies = async (keyword) => {
       headers: {
          'Accept': 'application/json',
          'Content-Type': 'application/json'
-       },
-       body: JSON.stringify({"myurl" : `${url}shows?q=${keyword}`})
+      },
+      body: JSON.stringify({ "myurl": `${url}shows?q=${keyword}`, "himitsu": "鍵" })
    });
    const data = await response.json();
    return data.filter(d => d.show.image);
 }
 
-export const getMoviesByPerson = async (person) =>{
-   if(!person) return;
+export const getMoviesByPerson = async (person) => {
+   if (!person) return;
    const response = await fetch(`${url}people?q=${person}`);
    const data = await response.json();
    return data;
