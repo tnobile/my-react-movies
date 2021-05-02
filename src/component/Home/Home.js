@@ -19,7 +19,7 @@ const Home = () => {
     const [keyWord, setKeyWord] = useState("Japan");
     const [keyQuery, setKeyQuery] = useState("Japan");
  //   const [keyPerson, setKeyPerson] = useState("");
-    const [keyPersonQuery, setKeyPersonQuery] = useState("");
+    //const [keyPersonQuery, setKeyPersonQuery] = useState("");
 
     useEffect(() => {
         (async () => {
