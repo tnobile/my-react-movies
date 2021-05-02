@@ -2,7 +2,7 @@ import './App.css';
 import Home from './component/Home/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Link
