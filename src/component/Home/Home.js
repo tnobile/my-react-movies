@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { getMovies, getMoviesByPerson } from '../../service/MovieService'
+import { getMovies } from '../../service/MovieService'
 import MovieList from '../MovieList/MovieList'
 import Heading from '../Heading/Heading'
 //import styles from './Home.module.css'
