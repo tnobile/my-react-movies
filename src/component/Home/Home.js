@@ -3,6 +3,7 @@ import { getMovies, getMoviesByPerson } from '../../service/MovieService'
 import MovieList from '../MovieList/MovieList'
 import Heading from '../Heading/Heading'
 import styles from './Home.module.css'
+import AddFavourite from '../AddFavourite/AddFavourite'
 
 function debounce(func, delay) {
     let timer;
@@ -12,6 +13,7 @@ function debounce(func, delay) {
     }
 }
 const Home = () => {
+    const [favourites, setFavourites] = useState([]);
     const [movies, setMovies] = useState([]);
     const [keyWord, setKeyWord] = useState("Japan");
     const [keyQuery, setKeyQuery] = useState("Japan");
@@ -39,8 +41,11 @@ const Home = () => {
         setKeyWord(e.target.value);
         delayedQuery(e.target.value);
     }
-
-    const handlePersonChange= e=>{
+    const addFavouriteMovie = (movie) => {
+        const newFavouriteList = [...favourites, movie];
+        setFavourites(newFavouriteList);
+    };
+    const handlePersonChange = e => {
         setKeyPerson(e.target.value);
         delayedPersonQuery(e.target.value);
     }
@@ -49,9 +54,12 @@ const Home = () => {
     return (
         <>
             <div className='container-fluid movie-app'>
-                <Heading keyWord={keyWord} handleChange={handleChange}/>
+                <Heading keyWord={keyWord} handleChange={handleChange} />
                 <div className='row'>
-                    {movies && movies.length > 0 && <MovieList movies={movies} />}
+                    {movies && movies.length > 0 &&
+                        <MovieList movies={movies} 
+                        handleFavouritesClick={addFavouriteMovie}
+                        favouriteComponent={AddFavourite} />}
                 </div>
             </div>
         </>
