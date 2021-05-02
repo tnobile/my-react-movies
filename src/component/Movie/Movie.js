@@ -23,8 +23,8 @@ const Movie = ({ movie }) => {
                             <li> {movie.show.type}</li>
                             <li> {movie.show.status}</li>
                             <li> {movie.show.score}</li>
-                            <li> <a href={movie.show.url}>{movie.show.url}</a></li>
-                            <li> <a href={movie.show.officialSite}>{movie.show.officialSite}</a></li>
+                            <li> <a href={movie.show.url} target="_blank" rel="noreferrer">{movie.show.url}</a></li>
+                            <li> <a href={movie.show.officialSite} target="_blank" rel="noreferrer">{movie.show.officialSite}</a></li>
                         </ul>
                     </div>
                 </div>
