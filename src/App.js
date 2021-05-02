@@ -15,13 +15,13 @@ const App = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Shows</Link>
             </li>
             <li>
               <Link to="/people">People</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/movies">Movies</Link>
             </li>
           </ul>
         </nav>
@@ -29,11 +29,11 @@ const App = () => {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
+          <Route path="/movies">
             <About />
           </Route>
           <Route path="/people">
-            <Users/>
+            <Users />
           </Route>
           <Route path="/">
             <div className="App">
@@ -46,7 +46,7 @@ const App = () => {
 }
 
 function About() {
-  return <h2>About</h2>;
+  return <h2>Movies...</h2>;
 }
 
 function Users() {
