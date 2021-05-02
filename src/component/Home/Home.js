@@ -15,6 +15,7 @@ function debounce(func, delay) {
 const Home = () => {
     const [favourites, setFavourites] = useState([]);
     const [movies, setMovies] = useState([]);
+    const [selected, setSelected] = useState();
     const [keyWord, setKeyWord] = useState("Japan");
     const [keyQuery, setKeyQuery] = useState("Japan");
     const [keyPerson, setKeyPerson] = useState("");
@@ -42,6 +43,7 @@ const Home = () => {
         delayedQuery(e.target.value);
     }
     const addFavouriteMovie = (movie) => {
+        setSelected(movie);
         const newFavouriteList = [...favourites, movie];
         setFavourites(newFavouriteList);
     };
@@ -57,9 +59,9 @@ const Home = () => {
                 <Heading keyWord={keyWord} handleChange={handleChange} />
                 <div className='row'>
                     {movies && movies.length > 0 &&
-                        <MovieList movies={movies} 
-                        handleFavouritesClick={addFavouriteMovie}
-                        favouriteComponent={AddFavourite} />}
+                        <MovieList movies={movies} selected={selected}
+                            handleFavouritesClick={addFavouriteMovie}
+                            favouriteComponent={AddFavourite} />}
                 </div>
             </div>
         </>

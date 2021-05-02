@@ -1,4 +1,4 @@
-
+import Movie from "../Movie/Movie"
 const MovieList = (props) => {
     const FavouriteComponent = props.favouriteComponent;
     return (
@@ -13,6 +13,8 @@ const MovieList = (props) => {
                     </div>
                 </div>
             ))}
+            <hr/>
+            <Movie movie={props.selected}/>
         </>
     );
 };
