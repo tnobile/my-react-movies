@@ -1,5 +1,9 @@
 import styles from './Movie.module.css'
 
+const RawHTML = ({children, className = ""}) => 
+<div className={className}
+  dangerouslySetInnerHTML={{ __html: children.replace(/\n/g, '<br />')}} />
+
 const Movie = ({ movie }) => {
     return (
         <>
@@ -11,6 +15,7 @@ const Movie = ({ movie }) => {
                     <div className="col-auto col-md-4 justify-content-start">
                         <div className={styles.title}> {movie.show.name}</div>
                         <div>
+                            <RawHTML children={movie.show.summary} className={styles.summary}/>
                             <ul className="list-unstyled">
                                 <li> {movie.show.language}</li>
                                 <li> {movie.show.genres}</li>
