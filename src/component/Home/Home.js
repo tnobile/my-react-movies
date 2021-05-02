@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { getMovies, getMoviesByPerson } from '../../service/MovieService'
 import MovieList from '../MovieList/MovieList'
 import Heading from '../Heading/Heading'
-import styles from './Home.module.css'
+//import styles from './Home.module.css'
 import AddFavourite from '../AddFavourite/AddFavourite'
 
 function debounce(func, delay) {
@@ -18,7 +18,7 @@ const Home = () => {
     const [selected, setSelected] = useState();
     const [keyWord, setKeyWord] = useState("Japan");
     const [keyQuery, setKeyQuery] = useState("Japan");
-    const [keyPerson, setKeyPerson] = useState("");
+ //   const [keyPerson, setKeyPerson] = useState("");
     const [keyPersonQuery, setKeyPersonQuery] = useState("");
 
     useEffect(() => {
@@ -47,10 +47,10 @@ const Home = () => {
         const newFavouriteList = [...favourites, movie];
         setFavourites(newFavouriteList);
     };
-    const handlePersonChange = e => {
-        setKeyPerson(e.target.value);
-        delayedPersonQuery(e.target.value);
-    }
+    // const handlePersonChange = e => {
+    //     setKeyPerson(e.target.value);
+    //     delayedPersonQuery(e.target.value);
+    // }
     const delayedQuery = useRef(debounce(q => setKeyQuery(q), 1000), [keyWord]).current;
     const delayedPersonQuery = useRef(debounce(q => setKeyPersonQuery(q), 1000), [keyWord]).current;
     return (
